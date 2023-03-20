@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSP 프로젝트</title>
+</head>
+<body>
+    <h3>JSP 테스트 1</h3>
+
+    <!-- 로그인
+        user01 / pass01! 로그인 시 성공
+    -->
+
+    		<!--"/프로젝트/서비스 요청주소" 메소드=로그인(get 혹은 post) -->
+    <form action="/JSPProject1/login" method="post">
+        ID : <input type="text" name="inputId"> <br>
+        PW : <input type="password" name="inputPw"> <br>
+        <button> 로그인 </button>
+    </form>
+
+    <!-- 단순페이지이동 temp -->
+    <a href="temp/test1.html">이동</a>
+	
+	<hr>
+	
+	
+	
+	
+	<h3>JSP 테스트 2</h3>
+	
+	<form action="/JSPProject1/pizzaOrder" method="post">
+	
+	피자 선택(1만원) :
+	
+	<select name="pizza">
+		<option>콤비네이션 피자</option>
+		<option>불고기 피자</option>
+		<option>고구마 피자</option>
+		<option>하이이안 피자</option>
+		<option>통새우 피자</option>
+	</select>
+	
+	<br><br>
+	
+	사이즈
+	
+	<br>
+	
+	<label>
+		R <input type="radio" name="size" value="R">
+	</label>
+	
+	<br>
+	
+	<label>
+		L(+2000) <input type="radio" name="size" value="L">
+	</label>
+	
+	<br><br>
+	
+	수량 : <input type="number" name="amount" min="1" max="10" value="1">
+	
+	<br><br>
+	
+	<button>주문하기</button>
+	
+	</form>
+    
+    
+    <h3>회원가입 (JSP 버전)</h3>
+    <form action="/JSPProject1/signUp" method="post">
+    	아이디 <input type="text" name="userId"><br>
+    	비밀번호 <input type="password" name="userPw"><br>
+    	비밀번호 확인 <input type="password" name="userPw2"><br>
+    	이름 <input type="text" name="userName"><br>
+    	이메일 <input type="email" name="email"><br>
+    	취미 
+        <br>
+    	<label>
+	    	공부 <input type="checkbox" name="hobby" value="study">
+    	</label>
+    	<label>
+	    	게임 <input type="checkbox" name="hobby" value="game">
+    	</label>
+    	<label>
+	    	헬스 <input type="checkbox" name="hobby" value="run">
+    	</label>
+        <br>
+    	<label>
+	    	독서 <input type="checkbox" name="hobby" value="book">
+    	</label>
+    	<label>
+	    	영화 <input type="checkbox" name="hobby" value="movie">
+    	</label>
+    	<label>
+	    	코딩 <input type="checkbox" name="hobby" value="coding">
+    	</label>
+    	<br>
+    	<button>회원 가입</button>
+    
+    </form>
+    
+    
+    
+    
+</body>
+</html>
