@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.jsp.JspContext;
 
 @WebServlet("/scope") // 무조건 절대경로 방식으로 요청 주소 작성
 public class ScopeServlet extends HttpServlet{
