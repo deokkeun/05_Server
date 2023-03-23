@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>${param.department}</title>
 
     <style>
         table {
@@ -33,18 +33,21 @@
 </head>
 <body>
 	<h1>[${department}] 학과 검색 결과</h1>
-    <table border="1px">
-        <tr class="title">
-            <th>순서</th>
-            <th>학번</th>
-            <th>이름</th>
-            <th>학과</th>
-            <th>주소</th>
-        </tr>
+    <table>
+    	<thead>
+	        <tr class="title">
+	            <th>순서</th>
+	            <th>학번</th>
+	            <th>이름</th>
+	            <th>학과</th>
+	            <th>주소</th>
+	        </tr>
+    	</thead>
+    	<tbody>
         <c:forEach var="student" items="${stdList}" varStatus="vs">
             <c:choose>
                 <c:when test="${vs.count % 2 == 0}">
-                    <tr class="bg, content">            
+                    <tr class="bg content">            
                         <td>${vs.count}</td>
                         <td>${student.studentNo}</td>
                         <td>${student.studentName}</td>
@@ -63,6 +66,7 @@
                 </c:otherwise>
 	        </c:choose>
           </c:forEach>
+    	</tbody>
             
     </table>
 </body>
