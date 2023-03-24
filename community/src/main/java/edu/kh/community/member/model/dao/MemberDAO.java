@@ -64,4 +64,61 @@ public class MemberDAO {
 		return member;
 	}
 
+	/** 인증번호, 발급일 수정 DAO
+	 * @param conn
+	 * @param inputEmail
+	 * @param cNumber
+	 * @return
+	 */
+	public int updateCertification(Connection conn, String inputEmail, String cNumber) throws Exception{
+
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("updateCertification");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, cNumber);
+			pstmt.setString(2, inputEmail);
+			
+			result = pstmt.executeUpdate();
+			
+			
+			
+			
+		} finally {
+			
+		}
+		return result;
+	}
+
+	/** 인증번호 생성 DAO
+	 * @param conn
+	 * @param inputEmail
+	 * @param cNumber
+	 * @return result
+	 */
+	public int insertCertification(Connection conn, String inputEmail, String cNumber) throws Exception{
+	
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("insertCertification");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, inputEmail);
+			pstmt.setString(2, cNumber);
+			
+			result = pstmt.executeUpdate();
+
+		} finally {
+			close(pstmt);
+		}
+		
+		
+		return result;
+	}
+
 }
